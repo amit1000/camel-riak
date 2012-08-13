@@ -34,16 +34,16 @@ Sample for put
 ---------------
 Java DSL:
 
-from("direct:riak.get")
-.setHeader(RiakConstants.OPERATION,constant(RiakConstants.GET_OPERATION))
+from("direct:riak.put")
+.setHeader(RiakConstants.OPERATION,constant(RiakConstants.PUT_OPERATION))
 .to("riak:myMap").to("mock:result");
 
 Spring DSL:
 
 <route>
-	<from uri="direct:put" />
+	<from uri="direct:riak.put" />
         <!-- set headerName to "CamelRiakOperationType" -->
-	<setHeader headerName="hazelcast.operation.type">
+	<setHeader headerName="CamelRiakOperationType">
 		<constant>put</constant>
 	</setHeader>
 	<to uri="riak:myMap" />
@@ -60,10 +60,10 @@ from("direct:riak.get")
 Spring DSL:
 
 <route>
-	<from uri="direct:put" />
+	<from uri="direct:riak.get" />
         <!-- set headerName to "CamelRiakOperationType" -->
-	<setHeader headerName="hazelcast.operation.type">
-		<constant>put</constant>
+	<setHeader headerName="CamelRiakOperationType">
+		<constant>get</constant>
 	</setHeader>
 	<to uri="riak:myMap" />
 	<to uri=""mock:result" />
@@ -82,7 +82,7 @@ Spring DSL:
 <route>
 	<from uri="direct:riak.delete" />
         <!--  set headerName to "CamelHazelcastOperationType" -->
-	<setHeader headerName="hazelcast.operation.type">
+	<setHeader headerName="CamelRiakOperationType">
 		<constant>delete</constant>
 	</setHeader>
 	<to uri="riak:myMap" />
