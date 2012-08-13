@@ -7,7 +7,7 @@ This component assume that Rick should installed on 127.0.0.1:8087. In feature r
 
 Maven
 ---------------
-Maven users will need to add the following dependency to their pom.xml for this component:
+##Maven users will need to add the following dependency to their pom.xml for this component:
  
 <repositories>
     <repository>
@@ -24,13 +24,13 @@ Maven users will need to add the following dependency to their pom.xml for this 
     <!-- use the same version as your Camel core version -->
 </dependency>
 
-You can call the samples with:
+##You can call the samples with:
 ------------------------------------
 template.sendBodyAndHeader("direct:[riak.put|riak.get|riak.delete]", "my-foo", RiakConstants.OBJECT_ID, "5111");
 
 
 
-Sample for put
+##Sample for put
 ---------------
 Java DSL:
 
@@ -50,7 +50,7 @@ Spring DSL:
 	<to uri=""mock:result" />
 </route>
 
-Sample for get
+##Sample for get
 ---------------
 Java DSL:
 from("direct:riak.get")
@@ -69,7 +69,7 @@ Spring DSL:
 	<to uri=""mock:result" />
 </route>
 
-Sample for delete
+##Sample for delete
 ------------------
 Java DSL:
 
