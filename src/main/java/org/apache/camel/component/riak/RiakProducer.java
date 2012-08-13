@@ -1,4 +1,4 @@
-xpackage org.apache.camel.component.riak;
+package org.apache.camel.component.riak;
 import java.util.Map;
 import org.apache.camel.Endpoint;
 import org.apache.camel.Exchange;
