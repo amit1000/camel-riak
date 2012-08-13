@@ -24,6 +24,12 @@ Maven users will need to add the following dependency to their pom.xml for this 
     <!-- use the same version as your Camel core version -->
 </dependency>
 
+You can call the samples with:
+------------------------------------
+template.sendBodyAndHeader("direct:[riak.put|riak.get|riak.delete]", "my-foo", RiakConstants.OBJECT_ID, "5111");
+
+
+
 Sample for put
 ---------------
 Java DSL:
